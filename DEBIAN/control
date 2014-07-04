@@ -1,0 +1,9 @@
+Package: storiq-objet-alerte
+Version: 2.1.5
+Section: Intellique
+Priority: optional
+Architecture: all
+Depends: storiq-objet-logger (>=0.9), storiq-objet-conf (>=0.1), storiq-objet-lang (>=0.1)
+Maintainer: Developers Team <dev@intellique.com>
+Description: storiq-objet-alerte
+ Objet de gestion des alertes.
