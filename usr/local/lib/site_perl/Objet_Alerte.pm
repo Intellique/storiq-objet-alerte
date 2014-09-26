@@ -8,8 +8,8 @@
 ##
 ## ###################################
 ##
-## Made by Pujos Sylvain
-## Login   <sylvain@intellique.com>
+## Made by Emmanuel Florac <eflorac@intellique.com>
+## 
 ##
 ## ###################################
 ##
@@ -171,9 +171,15 @@ sub send_mail {
         if ($err_msg);
 
     my ( $error, $msg ) = $self->{LOGGER}->configure_mail(
-        $self->{CONF}{'MAIL'}{'smtp'},
-        $self->{CONF}{'MAIL'}{'expediteur'},
-        $self->{CONF}{'MAIL'}{'destinataire'}
+        
+		{
+		smtp => $self->{CONF}{'MAIL'}{'smtp'},
+        from => $self->{CONF}{'MAIL'}{'expediteur'},
+        to => $self->{CONF}{'MAIL'}{'destinataire'},
+		auth => $self->{CONF}{'MAIL'}{'authmode'},
+		authid => $self->{CONF}{'MAIL'}{'login'},
+		authpwd => $self->{CONF}{'MAIL'}{'password'}
+		}
     );
 
     if ($error) {
